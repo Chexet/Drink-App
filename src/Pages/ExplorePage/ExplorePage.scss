@@ -1,0 +1,26 @@
+.explorepage {
+    h1 {
+        font-size: 70px;
+        color: rgb(3, 202, 209);
+    }
+
+    input {
+        border-radius: 4px;
+        height: 20px;
+    }
+
+    button {
+        border-radius: 4px;
+        border: 1px solid black;
+        margin-left: 5px;
+        padding: 5px 10px;
+    }
+
+    .drinks-section {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin: 100px 50px;
+    }
+}
