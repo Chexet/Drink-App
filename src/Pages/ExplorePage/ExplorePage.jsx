@@ -11,7 +11,14 @@ const ExplorePage = () => {
 
     const handleClick = () => {
         const validDrinks = Drinks.cocktails.filter(x => x.name.toLowerCase().includes(searchText.toLowerCase()));
-        setDrinks(validDrinks.map(x => <Card name={x.name} imageUrl={x.image} key={x.name}/>))
+        
+        if(validDrinks.length > 0) {
+            setDrinks(validDrinks.map(x => <Card name={x.name} imageUrl={x.image} key={x.name}/>));
+        }
+        else {
+            setDrinks("No drinks were found. Try again!");
+            setSearchText("");
+        }
     };
 
     const handleChange = e => {
@@ -22,7 +29,7 @@ const ExplorePage = () => {
         <div className="explorepage">
             <h1>Find your favourite drink!</h1>
 
-                <input type="text" name="search" onChange={ handleChange } />
+                <input type="text" name="search" onChange={ handleChange } value={ searchText } />
                 <button onClick={ handleClick }>Search</button>
 
                 <div className="drinks-section">

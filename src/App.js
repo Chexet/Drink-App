@@ -3,8 +3,9 @@ import './App.scss';
 
 import { Switch, Route, Link } from 'react-router-dom';
 
-import ExplorePage from '../src/Pages/ExplorePage/ExplorePage';
 import HomePage from '../src/Pages/HomePage/HomePage';
+import ExplorePage from '../src/Pages/ExplorePage/ExplorePage';
+import DrinkPage from '../src/Pages/DrinkPage/DrinkPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={ HomePage } />
         <Route exact path="/explore" component={ ExplorePage } />
+        <Route exact path="/drink/:drink" component={ DrinkPage } />
       </Switch>
     </div>
   );

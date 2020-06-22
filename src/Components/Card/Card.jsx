@@ -2,15 +2,17 @@ import React from 'react';
 
 import './Card.scss';
 
-const Card = ({ name, imageUrl }) => {
+import { withRouter } from 'react-router-dom';
+
+const Card = ({ name, imageUrl, history }) => {
 
 
     return (
-        <div className="card">
+        <div className="card" onClick={ () => history.push(`/drink/${name}`) }>
             <p>{ name }</p>
-            <img src={ imageUrl } />
+            <img src={ imageUrl } alt={ name } />
         </div>
     );
 }
 
-export default Card;
+export default withRouter(Card);
